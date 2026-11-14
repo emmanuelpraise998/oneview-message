@@ -129,4 +129,5 @@ app.use((err, _req, res, _next) => {
   res.status(400).json({ error: err.message || "Something went wrong." });
 });
 
+app.use(express.static(__dirname));
 app.listen(PORT, () => console.log(`ONEVIEW running at http://localhost:${PORT}`));
