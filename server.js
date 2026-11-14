@@ -130,4 +130,7 @@ app.use((err, _req, res, _next) => {
 });
 
 app.use(express.static(__dirname));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 app.listen(PORT, () => console.log(`ONEVIEW running at http://localhost:${PORT}`));
