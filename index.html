@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b12">
+  <title>ONEVIEW — Send a message that disappears</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient"></div>
+  <main class="shell">
+    <nav class="nav"><a class="brand" href="/"><span class="brand-mark">◈</span> ONEVIEW</a><span class="nav-note">PRIVATE · ONE-TIME VIEW</span></nav>
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> A little privacy goes a long way</div>
+      <h1>Some words are<br><span>just for one.</span></h1>
+      <p class="intro">Write your message. Add a picture if you like. Share one private link — once it’s opened, it disappears.</p>
+    </section>
+    <section class="composer card">
+      <div class="card-top"><div><span class="step">01 / CREATE</span><h2>Your secret message</h2></div><span class="lock">♧ <small>PRIVATE</small></span></div>
+      <form id="create-form">
+        <label for="message">MESSAGE</label>
+        <textarea id="message" name="message" maxlength="5000" rows="6">I know I have messed up. I have been overwhelmed with what ifs since yesterday.
+What if I did not sleep in the same bed with you, what if we never pecked or kiss.
+What if I said no that day in the car. What if I controlled myself, what if I didn’t engage you to the point of we loving each other. What if I didn’t even rush into a relationship after my last breakup.
+What if we remained friends, what if .. what if.
+I don’t have answers, I’m trying to, I don’t know how to act. But I love you. I really do love you.
+I haven’t being forthcoming enough, I let my own interests dictate my actions. Wasn’t it me that slept beside you for days and we kept it as friends.
+Why did I not just stay back when you said you were already liking me. Why did I engage and allow it. What if I just not reach out to you ever again as you have blocked ME. What if it pleases you to just be friends with me and we never go as far as touching each other again. What if I was able to ask you out properly, would I even act right. And be a man you’ll be proud of, in actions(physically, mentally and emotionally), what if I have healed and I can love properly.
+I don’t have answers precious. But the answer I have is, I love you. I’ve grown into loving you. Maybe not as much as you will believe. But I love you.
+And I’m sorry for how this looks now. I just wanna let you know that I love you.
+It’s fine if you block this number too, I’ll take it as you’re choosing yourself and your sanity first.
+But for the rest of my life. I’ll remember that I could’ve acted better.
+I love you Adun Mi.
+Bye (maybe?)</textarea>
+        <div class="counter"><span>End-to-end link access</span><span id="count">0 / 5000</span></div>
+        <div class="preset-photo">
+          <label class="preset-toggle"><input type="checkbox" id="use-preset-image" name="usePresetImage" checked> Include the attached picture</label>
+          <img src="/assets/adun-mi-photo.jpeg" id="preset-photo-preview" alt="Attached picture preview">
+        </div>
+        <div class="upload-wrap">
+          <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+          <button class="upload" type="button" id="pick-image"><span class="upload-icon">＋</span><span><b>Add a picture</b><small>Optional · JPG, PNG, WEBP, GIF · up to 5 MB</small></span></button>
+          <div id="file-name" class="file-name" hidden></div>
+        </div>
+        <div class="action-row">
+          <button class="secondary preview-button" id="preview-button" type="button">Preview message</button>
+          <button class="primary" type="submit"><span>Create private link</span><span>↗</span></button>
+        </div>
+        <section id="preview-panel" class="preview-panel" hidden aria-live="polite">
+          <div class="preview-heading"><span class="step">MESSAGE PREVIEW</span><button type="button" id="close-preview" class="close-preview" aria-label="Close preview">×</button></div>
+          <div id="preview-text" class="message-text preview-text"></div>
+          <img id="preview-image" class="message-image" alt="Picture preview" hidden>
+          <p class="preview-caption">This is how your message will appear to the recipient.</p>
+        </section>
+        <p class="fineprint">The link can be opened only once. Keep it private and send it to the intended person.</p>
+      </form>
+      <div id="result" class="result" hidden>
+        <div class="success-icon">✓</div><h3>Your link is ready.</h3><p>Share it with the person who should see your message.</p>
+        <div class="link-row"><input id="share-link" readonly aria-label="Private message link"><button id="copy" type="button">COPY</button></div>
+        <button class="secondary" id="create-another" type="button">Create another message</button>
+      </div>
+      <div id="error" class="error" role="alert" hidden></div>
+    </section>
+    <footer><span>◈ ONEVIEW</span><span>Made for messages that matter.</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
